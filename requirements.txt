@@ -1,6 +1,12 @@
 fastapi
 uvicorn[standard]
 python-dotenv
+twilio
+openai
+websockets
+httpxfastapi
+uvicorn[standard]
+python-dotenv
 requests
 httpx
 pydantic
