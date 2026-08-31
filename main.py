@@ -1,8 +1,20 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-import re
+from datetime import datetime
 
-app = FastAPI(title="Harry AI - Restaurant Booking Agent")
+app = FastAPI(title="Harry AI Restaurant Booking Agent")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# تخزين الحجوزات مؤقتًا
+bookings = []
 
 
 class Booking(BaseModel):
@@ -14,76 +26,44 @@ class Booking(BaseModel):
     guests: int
 
 
-bookings = []
-
-
-def valid_phone(phone: str) -> bool:
-    phone = phone.strip()
-    pattern = r"^\+?[0-9\s\-()]{8,20}$"
-    return bool(re.match(pattern, phone))
-
-
 @app.get("/")
 def home():
     return {
-        "message": "Harry AI Restaurant Booking Agent is running",
-        "status": "online"
+        "message": "Harry AI Restaurant Booking Agent is running"
     }
 
 
-@app.get("/restaurants")
-def restaurants():
-    return {
-        "restaurants": [
-            {
-                "name": "The Ivy",
-                "city": "London"
-            },
-            {
-                "name": "Dishoom",
-                "city": "London"
-            },
-            {
-                "name": "Flat Iron",
-                "city": "London"
-            },
-            {
-                "name": "Gordon Ramsay Restaurant",
-                "city": "London"
-            }
-        ]
-    }
+@app.get("/health")
+def health():
+    return {"status": "ok"}
 
 
 @app.post("/book")
-def book_restaurant(booking: Booking):
+def create_booking(booking: Booking):
+    new_booking = {
+        "id": len(bookings) + 1,
+        "name": booking.name,
+        "phone": booking.phone,
+        "restaurant": booking.restaurant,
+        "date": booking.date,
+        "time": booking.time,
+        "guests": booking.guests,
+        "created_at": datetime.now().isoformat(),
+        "status": "pending",
+    }
 
-    if not valid_phone(booking.phone):
-        return {
-            "success": False,
-            "message": "رقم الهاتف غير صحيح"
-        }
-
-    if booking.guests < 1 or booking.guests > 20:
-        return {
-            "success": False,
-            "message": "عدد الأشخاص يجب أن يكون بين 1 و20"
-        }
-
-    booking_data = booking.model_dump()
-    booking_data["id"] = len(bookings) + 1
-
-    bookings.append(booking_data)
+    bookings.append(new_booking)
 
     return {
         "success": True,
-        "message": "تم تسجيل طلب الحجز بنجاح",
-        "booking": booking_data
+        "message": "تم استلام طلب الحجز بنجاح",
+        "booking": new_booking,
     }
 
 
 @app.get("/bookings")
 def get_bookings():
     return {
-        "count": len(bookings),
-        "
+        "success": True,
+        "bookings": bookings
+    }
