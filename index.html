@@ -14,103 +14,156 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #f5f7fb;
-      color: #172033;
+      background: #f5f7f9;
+      color: #17202a;
       line-height: 1.6;
     }
 
     header {
-      background: #ffffff;
-      border-bottom: 1px solid #e5e7eb;
+      background: #111827;
+      color: white;
+      padding: 18px 20px;
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 100;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.15);
     }
 
     .nav {
       max-width: 1100px;
       margin: auto;
-      padding: 18px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 20px;
     }
 
     .logo {
-      font-size: 24px;
-      font-weight: 800;
-      color: #1769aa;
+      font-size: 25px;
+      font-weight: bold;
     }
 
     .logo span {
-      color: #111827;
+      color: #ff7a59;
     }
 
-    .nav a {
+    nav a {
+      color: white;
       text-decoration: none;
-      color: #374151;
-      margin-left: 22px;
-      font-weight: 600;
+      margin-left: 18px;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: #ff9b82;
     }
 
     .hero {
-      background: linear-gradient(135deg, #1769aa, #38a3db);
+      background: linear-gradient(135deg, #111827, #26354d);
       color: white;
-      padding: 80px 20px;
+      padding: 75px 20px;
     }
 
     .hero-content {
       max-width: 1100px;
       margin: auto;
-      text-align: center;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 45px;
+      align-items: center;
     }
 
     .hero h1 {
-      font-size: 48px;
-      line-height: 1.15;
+      font-size: 52px;
+      line-height: 1.1;
       margin-bottom: 20px;
     }
 
-    .hero p {
-      max-width: 700px;
-      margin: 0 auto 30px;
-      font-size: 20px;
-      opacity: 0.95;
+    .hero h1 span {
+      color: #ff8061;
     }
 
-    .button {
+    .hero p {
+      font-size: 19px;
+      color: #d7dde6;
+      margin-bottom: 28px;
+      max-width: 650px;
+    }
+
+    .btn {
       display: inline-block;
-      background: white;
-      color: #1769aa;
       border: none;
-      padding: 14px 28px;
-      border-radius: 10px;
-      font-size: 17px;
-      font-weight: 700;
+      border-radius: 12px;
+      padding: 14px 23px;
+      background: #ff7555;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
       cursor: pointer;
       text-decoration: none;
+      transition: 0.2s;
     }
 
-    .button:hover {
-      opacity: 0.9;
+    .btn:hover {
+      background: #e85f40;
+      transform: translateY(-2px);
     }
 
-    .section {
+    .hero-card {
+      background: white;
+      color: #17202a;
+      padding: 28px;
+      border-radius: 22px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    }
+
+    .hero-card h3 {
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .hero-card p {
+      color: #667085;
+      font-size: 15px;
+      margin-bottom: 18px;
+    }
+
+    .search-box {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid #d5dae1;
+      border-radius: 10px;
+      font-size: 15px;
+      background: white;
+    }
+
+    section {
+      padding: 65px 20px;
+    }
+
+    .container {
       max-width: 1100px;
       margin: auto;
-      padding: 65px 20px;
     }
 
     .section-title {
       text-align: center;
-      font-size: 34px;
-      margin-bottom: 12px;
+      margin-bottom: 40px;
     }
 
-    .section-subtitle {
-      text-align: center;
-      color: #6b7280;
-      margin-bottom: 40px;
+    .section-title h2 {
+      font-size: 34px;
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      color: #667085;
     }
 
     .features {
@@ -119,80 +172,54 @@
       gap: 22px;
     }
 
-    .card {
+    .feature {
       background: white;
       padding: 28px;
-      border-radius: 16px;
+      border-radius: 18px;
       box-shadow: 0 5px 20px rgba(0,0,0,0.06);
     }
 
-    .card-icon {
+    .feature-icon {
       font-size: 38px;
       margin-bottom: 12px;
     }
 
-    .card h3 {
-      margin-bottom: 10px;
-      font-size: 21px;
+    .feature h3 {
+      margin-bottom: 8px;
     }
 
-    .card p {
-      color: #6b7280;
+    .feature p {
+      color: #667085;
     }
 
     .booking {
-      background: white;
-      border-radius: 20px;
-      padding: 35px;
-      max-width: 750px;
-      margin: auto;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      background: #eef2f6;
     }
 
-    .form-group {
+    .booking-form {
+      background: white;
+      max-width: 800px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
       margin-bottom: 20px;
     }
 
-    label {
+    .field label {
       display: block;
+      font-weight: bold;
       margin-bottom: 7px;
-      font-weight: 700;
     }
 
-    input,
-    select {
-      width: 100%;
-      padding: 14px;
-      border: 1px solid #d1d5db;
-      border-radius: 9px;
-      font-size: 16px;
-      background: white;
-    }
-
-    .book-button {
-      width: 100%;
-      padding: 15px;
-      background: #1769aa;
-      color: white;
-      border: none;
-      border-radius: 9px;
-      font-size: 17px;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    .book-button:hover {
-      background: #125586;
-    }
-
-    #result {
-      display: none;
-      margin-top: 22px;
-      padding: 18px;
-      border-radius: 10px;
-      background: #ecfdf5;
-      color: #065f46;
-      font-weight: 600;
+    .full {
+      grid-column: 1 / -1;
     }
 
     .restaurants {
@@ -203,18 +230,26 @@
 
     .restaurant {
       background: white;
-      border-radius: 16px;
+      border-radius: 18px;
       overflow: hidden;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.07);
     }
 
     .restaurant-image {
       height: 180px;
-      background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+      background: linear-gradient(135deg, #ff8061, #ffb199);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 65px;
+    }
+
+    .restaurant:nth-child(2) .restaurant-image {
+      background: linear-gradient(135deg, #40566f, #91a6bb);
+    }
+
+    .restaurant:nth-child(3) .restaurant-image {
+      background: linear-gradient(135deg, #d69b5b, #f0cf9e);
     }
 
     .restaurant-info {
@@ -222,11 +257,87 @@
     }
 
     .restaurant-info h3 {
-      margin-bottom: 8px;
+      margin-bottom: 7px;
     }
 
     .restaurant-info p {
-      color: #6b7280;
+      color: #667085;
+      margin-bottom: 14px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #fff0eb;
+      color: #e85f40;
+      padding: 5px 9px;
+      border-radius: 20px;
+      font-size: 12px;
+      margin-bottom: 14px;
+    }
+
+    .chat-section {
+      background: white;
+    }
+
+    .chat {
+      max-width: 700px;
+      margin: auto;
+      border: 1px solid #e1e5ea;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+    }
+
+    .chat-header {
+      background: #111827;
+      color: white;
+      padding: 18px 22px;
+      font-weight: bold;
+    }
+
+    .messages {
+      padding: 22px;
+      min-height: 270px;
+      background: #f8fafc;
+    }
+
+    .message {
+      padding: 12px 15px;
+      border-radius: 14px;
+      margin-bottom: 12px;
+      max-width: 80%;
+    }
+
+    .bot {
+      background: white;
+      border: 1px solid #e5e7eb;
+    }
+
+    .user {
+      background: #ff7555;
+      color: white;
+      margin-left: auto;
+    }
+
+    .chat-input {
+      display: flex;
+      padding: 15px;
+      gap: 10px;
+      background: white;
+    }
+
+    .chat-input input {
+      flex: 1;
+    }
+
+    .status {
+      margin-top: 18px;
+      padding: 13px;
+      border-radius: 10px;
+      display: none;
+      background: #ecfdf3;
+      color: #027a48;
+      font-weight: bold;
     }
 
     footer {
@@ -239,3 +350,546 @@
 
     footer p {
       opacity: 0.8;
+    }
+
+    @media (max-width: 800px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .features,
+      .restaurants {
+        grid-template-columns: 1fr;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .full {
+        grid-column: auto;
+      }
+
+      nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="nav">
+      <div class="logo">Harry <span>AI</span> 🍽️</div>
+
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#restaurants">Restaurants</a>
+        <a href="#booking">Book a Table</a>
+        <a href="#chat">AI Assistant</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero" id="home">
+      <div class="hero-content">
+
+        <div>
+          <h1>
+            Find & Book<br>
+            <span>London Restaurants</span>
+          </h1>
+
+          <p>
+            Harry AI is your smart restaurant booking assistant.
+            Discover restaurants, choose your preferences and plan
+            your perfect dining experience in London.
+          </p>
+
+          <a href="#booking" class="btn">Book a Table 🍽️</a>
+        </div>
+
+        <div class="hero-card">
+          <h3>🔎 Find your restaurant</h3>
+          <p>Tell Harry AI what you are looking for.</p>
+
+          <div class="search-box">
+            <input
+              id="quickSearch"
+              type="text"
+              placeholder="e.g. Italian restaurant in London"
+            >
+
+            <select id="quickCuisine">
+              <option value="">Choose cuisine</option>
+              <option>Italian</option>
+              <option>Indian</option>
+              <option>Japanese</option>
+              <option>French</option>
+              <option>British</option>
+              <option>Arabic</option>
+            </select>
+
+            <button class="btn" onclick="quickSearch()">
+              Search Restaurants
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section>
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Why Harry AI?</h2>
+          <p>Everything you need for a simple restaurant booking experience.</p>
+        </div>
+
+        <div class="features">
+
+          <div class="feature">
+            <div class="feature-icon">🔎</div>
+            <h3>Smart Search</h3>
+            <p>
+              Find restaurants in London based on cuisine,
+              location and your personal preferences.
+            </p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">🤖</div>
+            <h3>AI Assistant</h3>
+            <p>
+              Chat with Harry AI and describe the restaurant
+              experience you want in natural language.
+            </p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">📅</div>
+            <h3>Easy Booking</h3>
+            <p>
+              Choose your date, time and number of guests
+              and request a table in seconds.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <section id="restaurants">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Featured Restaurants</h2>
+          <p>Explore some example dining options in London.</p>
+        </div>
+
+        <div class="restaurants">
+
+          <div class="restaurant">
+            <div class="restaurant-image">🍝</div>
+
+            <div class="restaurant-info">
+              <span class="tag">Italian</span>
+              <h3>La Bella London</h3>
+              <p>Modern Italian cuisine in central London.</p>
+              <button class="btn" onclick="selectRestaurant('La Bella London')">
+                Select
+              </button>
+            </div>
+          </div>
+
+          <div class="restaurant">
+            <div class="restaurant-image">🍣</div>
+
+            <div class="restaurant-info">
+              <span class="tag">Japanese</span>
+              <h3>Tokyo Garden</h3>
+              <p>Japanese dishes, sushi and a relaxed atmosphere.</p>
+              <button class="btn" onclick="selectRestaurant('Tokyo Garden')">
+                Select
+              </button>
+            </div>
+          </div>
+
+          <div class="restaurant">
+            <div class="restaurant-image">🥘</div>
+
+            <div class="restaurant-info">
+              <span class="tag">British</span>
+              <h3>The London Table</h3>
+              <p>A contemporary British dining experience.</p>
+              <button class="btn" onclick="selectRestaurant('The London Table')">
+                Select
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="booking" id="booking">
+
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Book a Table</h2>
+          <p>Choose your restaurant, date and preferred time.</p>
+        </div>
+
+        <div class="booking-form">
+
+          <div class="form-grid">
+
+            <div class="field full">
+              <label for="restaurant">Restaurant</label>
+
+              <select id="restaurant">
+                <option value="">Select a restaurant</option>
+                <option>La Bella London</option>
+                <option>Tokyo Garden</option>
+                <option>The London Table</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="date">Date</label>
+              <input type="date" id="date">
+            </div>
+
+            <div class="field">
+              <label for="time">Time</label>
+
+              <select id="time">
+                <option>18:00</option>
+                <option>18:30</option>
+                <option>19:00</option>
+                <option>19:30</option>
+                <option>20:00</option>
+                <option>20:30</option>
+                <option>21:00</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="guests">Guests</label>
+
+              <select id="guests">
+                <option>1 person</option>
+                <option>2 people</option>
+                <option>3 people</option>
+                <option>4 people</option>
+                <option>5 people</option>
+                <option>6 people</option>
+                <option>7 people</option>
+                <option>8 people</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" placeholder="Enter your name">
+            </div>
+
+            <div class="field full">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="you@example.com">
+            </div>
+
+          </div>
+
+          <button class="btn" onclick="makeBooking()">
+            Confirm Booking Request
+          </button>
+
+          <div class="status" id="bookingStatus"></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="chat-section" id="chat">
+
+      <div class="container">
+
+        <div class="section-title">
+          <h2>🤖 Chat with Harry AI</h2>
+          <p>Ask Harry to help you find a restaurant.</p>
+        </div>
+
+        <div class="chat">
+
+          <div class="chat-header">
+            Harry AI Assistant
+          </div>
+
+          <div class="messages" id="messages">
+
+            <div class="message bot">
+              Hello! 👋 I'm Harry AI. What kind of restaurant
+              are you looking for in London?
+            </div>
+
+            <div class="message user">
+              I want an Italian restaurant for two people.
+            </div>
+
+            <div class="message bot">
+              Great choice! 🇮🇹 I can help you find an Italian
+              restaurant and choose a suitable time.
+            </div>
+
+          </div>
+
+          <div class="chat-input">
+
+            <input
+              type="text"
+              id="chatInput"
+              placeholder="Ask Harry AI..."
+              onkeydown="if(event.key==='Enter') sendMessage()"
+            >
+
+            <button class="btn" onclick="sendMessage()">
+              Send
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+    <h3>Harry AI 🍽️</h3>
+
+    <p>
+      AI-powered restaurant booking assistant for London.
+    </p>
+
+    <p>
+      © 2026 Harry AI. All rights reserved.
+    </p>
+  </footer>
+
+
+  <script>
+
+    function quickSearch() {
+
+      const search = document.getElementById("quickSearch").value;
+      const cuisine = document.getElementById("quickCuisine").value;
+
+      if (!search && !cuisine) {
+        alert("Please enter a search or choose a cuisine.");
+        return;
+      }
+
+      let message = "Searching for ";
+
+      if (cuisine) {
+        message += cuisine + " restaurants";
+      } else {
+        message += search;
+      }
+
+      message += " in London...";
+
+      alert(message);
+
+      document.getElementById("restaurants").scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+
+
+    function selectRestaurant(name) {
+
+      document.getElementById("restaurant").value = name;
+
+      document.getElementById("booking").scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+
+
+    function makeBooking() {
+
+      const restaurant =
+        document.getElementById("restaurant").value;
+
+      const date =
+        document.getElementById("date").value;
+
+      const time =
+        document.getElementById("time").value;
+
+      const guests =
+        document.getElementById("guests").value;
+
+      const name =
+        document.getElementById("name").value;
+
+      const email =
+        document.getElementById("email").value;
+
+      const status =
+        document.getElementById("bookingStatus");
+
+
+      if (!restaurant || !date || !name || !email) {
+
+        status.style.display = "block";
+
+        status.style.background = "#fff1f2";
+        status.style.color = "#be123c";
+
+        status.innerText =
+          "Please complete all required fields.";
+
+        return;
+      }
+
+
+      status.style.display = "block";
+
+      status.style.background = "#ecfdf3";
+      status.style.color = "#027a48";
+
+      status.innerText =
+        "✅ Booking request received for " +
+        name +
+        " at " +
+        restaurant +
+        " on " +
+        date +
+        " at " +
+        time +
+        " for " +
+        guests +
+        ".";
+    }
+
+
+    function sendMessage() {
+
+      const input =
+        document.getElementById("chatInput");
+
+      const messages =
+        document.getElementById("messages");
+
+      const text =
+        input.value.trim();
+
+
+      if (!text) {
+        return;
+      }
+
+
+      const userMessage =
+        document.createElement("div");
+
+      userMessage.className = "message user";
+
+      userMessage.innerText = text;
+
+      messages.appendChild(userMessage);
+
+
+      input.value = "";
+
+
+      setTimeout(function() {
+
+        const botMessage =
+          document.createElement("div");
+
+        botMessage.className = "message bot";
+
+
+        let response =
+          "I'd be happy to help! 😊 " +
+          "Try telling me your preferred cuisine, " +
+          "number of guests, date and time.";
+
+
+        const lower =
+          text.toLowerCase();
+
+
+        if (
+          lower.includes("italian") ||
+          lower.includes("pizza")
+        ) {
+
+          response =
+            "🍝 For Italian food in London, " +
+            "you could try La Bella London. " +
+            "Would you like to book a table?";
+        }
+
+
+        else if (
+          lower.includes("japanese") ||
+          lower.includes("sushi")
+        ) {
+
+          response =
+            "🍣 Tokyo Garden is a great example " +
+            "of a Japanese dining option. " +
+            "You can select it from the restaurant list.";
+        }
+
+
+        else if (
+          lower.includes("book") ||
+          lower.includes("reservation")
+        ) {
+
+          response =
+            "📅 Of course! Scroll to the booking form, " +
+            "choose your restaurant, date, time and guests, " +
+            "then confirm your booking request.";
+        }
+
+
+        botMessage.innerText = response;
+
+        messages.appendChild(botMessage);
+
+        messages.scrollTop = messages.scrollHeight;
+
+      }, 600);
+
+    }
+
+  </script>
+
+</body>
+</html>
