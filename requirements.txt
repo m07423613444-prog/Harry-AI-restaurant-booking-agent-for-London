@@ -4,12 +4,4 @@ python-dotenv
 twilio
 openai
 websockets
-httpxfastapi
-uvicorn[standard]
-python-dotenv
-requests
 httpx
-pydantic
-twilio
-openai
-beautifulsoup4
